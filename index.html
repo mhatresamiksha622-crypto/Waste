@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoSmart | Waste Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>♻ EcoSmart</h2>
+    <p class="tagline">Smart Waste Management</p>
+
+    <button onclick="showPage('dashboard')">📊 Dashboard</button>
+    <button onclick="showPage('bins')">🗑 Smart Bins</button>
+    <button onclick="showPage('collection')">🚛 Collections</button>
+    <button onclick="showPage('alerts')">🔔 Alerts</button>
+
+    <div class="sidebar-bottom">🌱 Keep Your City Clean</div>
+</div>
+
+<main>
+    <header>
+        <div>
+            <h1 id="pageTitle">Dashboard</h1>
+            <p>Monitor and manage waste intelligently.</p>
+        </div>
+        <div class="admin">👤 Admin</div>
+    </header>
+
+    <section id="dashboard" class="page">
+        <div class="welcome">
+            <h2>Welcome to EcoSmart 🌿</h2>
+            <p>A cleaner city starts with smarter waste management.</p>
+        </div>
+
+        <div class="stats">
+            <div class="card">
+                <span>Total Smart Bins</span>
+                <h2 id="totalBins">4</h2>
+                <small>Registered bins</small>
+            </div>
+            <div class="card">
+                <span>Bins Requiring Pickup</span>
+                <h2 id="fullBins">2</h2>
+                <small>Above 80% capacity</small>
+            </div>
+            <div class="card">
+                <span>Pending Collections</span>
+                <h2 id="pending">2</h2>
+                <small>Awaiting collection</small>
+            </div>
+            <div class="card">
+                <span>Completed Collections</span>
+                <h2 id="completed">0</h2>
+                <small>Today's demo activity</small>
+            </div>
+        </div>
+
+        <div class="panel">
+            <h2>Smart Bin Monitoring</h2>
+            <div id="binPreview"></div>
+        </div>
+    </section>
+
+    <section id="bins" class="page hidden">
+        <div class="panel">
+            <h2>Smart Bin Management</h2>
+            <p>Monitor fill levels and simulate new waste collection.</p>
+
+            <form id="binForm">
+                <input id="binName" placeholder="Bin name" required>
+                <input id="binLocation" placeholder="Location" required>
+                <input id="binLevel" type="number" min="0" max="100"
+                       placeholder="Fill level %" required>
+                <button type="submit" class="primary">+ Add Bin</button>
+            </form>
+
+            <div id="allBins"></div>
+        </div>
+    </section>
+
+    <section id="collection" class="page hidden">
+        <div class="panel">
+            <h2>Collection Management 🚛</h2>
+            <p>Bins above 80% capacity need priority collection.</p>
+            <div id="collectionList"></div>
+        </div>
+    </section>
+
+    <section id="alerts" class="page hidden">
+        <div class="panel">
+            <h2>System Alerts 🔔</h2>
+            <div id="alertList"></div>
+        </div>
+    </section>
+
+    <footer>EcoSmart © 2026 | Smart City Sustainability Project</footer>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
